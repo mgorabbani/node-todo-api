@@ -24,3 +24,5 @@ app.post('/todos',(req,res)=>{
 app.listen(3000,()=>{
     console.log("Starting server at http://127.0.0.1:3000")
 })
+
+module.exports = {app}
