@@ -21,6 +21,16 @@ app.post('/todos',(req,res)=>{
 })
 
 
+app.get('/todos',(req,res)=>{
+
+    Todo.find().then((todos)=>{
+        res.send({todos,code:12})
+    },(e)=>{
+        res.status(400).send(e)
+    })
+})
+
+
 app.listen(3000,()=>{
     console.log("Starting server at http://127.0.0.1:3000")
 })
