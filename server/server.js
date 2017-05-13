@@ -38,7 +38,7 @@ app.get('/todos/:id',(req,res)=>{
     if(!ObjectID.isValid(id)) res.status(404).json({error:'todo not found'})
 
     Todo.findById().then((todo)=>{
-        res.json(todo)
+        res.send({todo})
     }).catch(e=>{
         res.status(400)
     })
